@@ -7,12 +7,13 @@ import Profile from './pages/profile/Profile';
 import Navbar from './components/navbar/Navbar';
 import Rightbar from './components/rightbar/Rightbar';
 import Leftbar from './components/leftbar/Leftbar';
-import { Outlet } from 'react-router-dom';
+import { Navigate, Outlet } from 'react-router-dom';
 import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 
 
 
 function App() {
+  const currentUser = false;
 
   const Layout = () => {
     return(
@@ -26,12 +27,23 @@ function App() {
         </div>
       </div>
     )
+  };
+
+  const ProtectedRoute = ({children}) => {
+    if (!currentUser) {
+      return <Navigate to ='/login' />
+    }
+    return <children/>
   }
 
   const router = createBrowserRouter([
     {
       path: '/',
-      element: <Layout/>,
+      element: (
+        <ProtectedRoute>
+          <Layout/>
+        </ProtectedRoute>
+      ) ,
       children:[
         {
           path:'/',
