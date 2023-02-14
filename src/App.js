@@ -9,7 +9,7 @@ import Rightbar from './components/rightbar/Rightbar';
 import Leftbar from './components/leftbar/Leftbar';
 import { Navigate, Outlet } from 'react-router-dom';
 import { createBrowserRouter,RouterProvider,} from "react-router-dom";
-
+import './style.scss'
 
 
 function App() {
@@ -17,14 +17,15 @@ function App() {
 
   const Layout = () => {
     return(
-      <div>
+      <div className='theme-dark'>
         <Navbar/>
         <div style={{display: 'flex'}}>
           <Leftbar/>
+
           <div style={{flex:6}}>
           <Outlet/>
-
           </div>
+
           <Rightbar/>
 
         </div>

@@ -48,19 +48,19 @@ const Leftbar = () => {
           <div className="menu">
             <span>Your shortcuts</span>
           <div className="item">
-            <EventAvailableTwoToneIcon/>
+            <EventAvailableTwoToneIcon className='icon'/>
             <span>Events</span>
           </div>
           <div className="item">
-            <SportsEsportsTwoToneIcon/>
+            <SportsEsportsTwoToneIcon className='icon'/>
             <span>Gaming</span>
           </div>
           <div className="item">
-            <CollectionsTwoToneIcon/>
+            <CollectionsTwoToneIcon className='icon'/>
             <span>Gallery</span>
           </div>
           <div className="item">
-            <ChatTwoToneIcon/>
+            <ChatTwoToneIcon className='icon'/>
             <span>Messages</span>
           </div>
           </div>
@@ -69,19 +69,19 @@ const Leftbar = () => {
           <div className="menu">
             <span>Others</span>
           <div className="item">
-            <VideoLibraryTwoToneIcon/>
+            <VideoLibraryTwoToneIcon className='icon'/>
             <span>Videos</span>
           </div>
           <div className="item">
-            <AttachMoneyTwoToneIcon/>
+            <AttachMoneyTwoToneIcon className='icon'/>
             <span>Funding</span>
           </div>
           <div className="item">
-            <LocalLibraryTwoToneIcon/>
+            <LocalLibraryTwoToneIcon className='icon'/>
             <span>Tutorial</span>
           </div>
           <div className="item">
-            <MenuBookTwoToneIcon/>
+            <MenuBookTwoToneIcon className='icon'/>
             <span>Courses</span>
           </div>
 
