@@ -13,7 +13,7 @@ import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 
 
 function App() {
-  const currentUser = false;
+  const currentUser = true;
 
   const Layout = () => {
     return(
@@ -21,7 +21,10 @@ function App() {
         <Navbar/>
         <div style={{display: 'flex'}}>
           <Leftbar/>
+          <div style={{flex:6}}>
           <Outlet/>
+
+          </div>
           <Rightbar/>
 
         </div>
@@ -33,7 +36,7 @@ function App() {
     if (!currentUser) {
       return <Navigate to ='/login' />
     }
-    return <children/>
+    return children;
   }
 
   const router = createBrowserRouter([
