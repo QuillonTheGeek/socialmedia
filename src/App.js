@@ -10,14 +10,21 @@ import Leftbar from './components/leftbar/Leftbar';
 import { Navigate, Outlet } from 'react-router-dom';
 import { createBrowserRouter,RouterProvider,} from "react-router-dom";
 import './style.scss'
+import { useContext } from 'react';
+import { DarkModeContext } from './context/darkModeContext';
+import { AuthContext } from './context/authContext';
 
 
 function App() {
-  const currentUser = true;
+  // const currentUser = true;
+  const {currentUser} = useContext(AuthContext);
+
+  const {darkMode} = useContext(DarkModeContext);
+  
 
   const Layout = () => {
     return(
-      <div className='theme-dark'>
+      <div className={`theme-${darkMode ? "dark" : "light"}`}>
         <Navbar/>
         <div style={{display: 'flex'}}>
           <Leftbar/>
