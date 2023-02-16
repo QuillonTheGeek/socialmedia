@@ -6,9 +6,11 @@ import ShareOutlinedIcon from '@mui/icons-material/ShareOutlined';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 import { Link } from 'react-router-dom';
 import Comments from '../comments/Comments';
+import { useState } from 'react';
 
 const Post = ({post}) => {
 
+    const [commentOpen, setCommmentOpen] = useState(false)
     // TEMPORARY
     const liked = false;
   return (
@@ -35,7 +37,7 @@ const Post = ({post}) => {
                 {liked ? <FavoriteOutlinedIcon/> : <FavoriteBorderOutlinedIcon/>}
                 12 likes4
             </div>
-            <div className="item">
+            <div className="item" onClick={() => setCommmentOpen(!commentOpen)}>
                <TextsmsOutlinedIcon/>
                 63k comments
             </div>
@@ -44,6 +46,8 @@ const Post = ({post}) => {
                 1M+ shared
             </div>
         </div>
+        
+        {commentOpen && <Comments/>}
         </div>
     </div>
   )

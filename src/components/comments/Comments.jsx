@@ -1,14 +1,16 @@
 import './Comments.scss'
+import { AuthContext } from './../../context/authContext';
+import { useContext } from 'react';
 
 const Comments = () => {
-
+ const { currentUser } = useContext(AuthContext)
       const comments = [
     {
       id: 1,
       name: 'Olalekan',
       userId: 1,
       profilePic: 'https://images.pexels.com/photos/14019734/pexels-photo-14019734.jpeg?auto=compress&cs=tinysrgb&w=400',
-      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, dolores.',
+      desc: 'Lorem ipsum dolor, sit amet adipisicing elit. Accusantium, dolores.',
       img: 'https://images.pexels.com/photos/5935794/pexels-photo-5935794.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
@@ -16,7 +18,7 @@ const Comments = () => {
       name: 'DevOp',
       userId: 2,
       profilePic: 'https://images.pexels.com/photos/5935787/pexels-photo-5935787.jpeg?auto=compress&cs=tinysrgb&w=400',
-      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, dolores.',
+      desc: 'Lorem ipsum dolor, sit amet consectetur  Accusantium, dolores.',
       img: 'https://images.pexels.com/photos/11355572/pexels-photo-11355572.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
     {
@@ -24,12 +26,17 @@ const Comments = () => {
       name: 'Java Lord',
       userId: 3,
       profilePic: 'https://images.pexels.com/photos/14019734/pexels-photo-14019734.jpeg?auto=compress&cs=tinysrgb&w=400',
-      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusantium, dolores.',
+      desc: 'Lorem ipsum dolor, sit amet consectetur adipisicing elit.',
       img: 'https://images.pexels.com/photos/1573460/pexels-photo-1573460.jpeg?auto=compress&cs=tinysrgb&w=400'
     },
   ]
   return (
     <div className='comments'>
+        <div className="write">
+            <img src={currentUser.profilePic} alt="" />
+            <input type="text" placeholder='write a comment...' />
+            <button>Send</button>
+        </div>
         {comments.map(comment => (
             <div className="comment">
                 <img src={comment.profilePic} alt="" />
