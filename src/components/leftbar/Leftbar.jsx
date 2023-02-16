@@ -12,15 +12,19 @@ import ChatTwoToneIcon from '@mui/icons-material/ChatTwoTone';
 import LocalLibraryTwoToneIcon from '@mui/icons-material/LocalLibraryTwoTone';
 import MenuBookTwoToneIcon from '@mui/icons-material/MenuBookTwoTone';
 import AttachMoneyTwoToneIcon from '@mui/icons-material/AttachMoneyTwoTone';
+import { useContext } from 'react';
+import { AuthContext } from '../../context/authContext';
 
 const Leftbar = () => {
+
+  const { currentUser } = useContext(AuthContext)
   return (
     <div className="leftbar">
       <div className="container">
         <div className="menu">
            <div className="user">
-          <img src="https://images.pexels.com/photos/5721094/pexels-photo-5721094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="" />
-          <span>Quillon</span>
+          <img src={currentUser.profilePic} alt="" />
+          <span>{currentUser.name}</span>
         </div>
         <div className="item">
           <GroupAddTwoToneIcon className='icon'/>

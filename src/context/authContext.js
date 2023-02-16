@@ -10,9 +10,8 @@ import { createContext, useEffect, useState } from "react"
         // TO DO
         setCurrentUser({
             id:1,
-            name: 'John Doe',
-            profilePic:
-            'https://images.pexels.com/photos/5721094/pexels-photo-5721094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+            name: 'Quillon',
+            profilePic: "https://images.pexels.com/photos/5721094/pexels-photo-5721094.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1",
         });
     };
 
