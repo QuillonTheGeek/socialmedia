@@ -49,6 +49,10 @@
             .content {
                 margin: 20px 0px;
 
+                p {
+                    display: flex;
+                }
+
                 img {
                     width: 100%;
                     max-height: 500px;
